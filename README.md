@@ -72,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### notes
 
 - for installing dependencies in package.json, npm install --legacy-peer-deps
+- git remote rm origin : removes set remote urls :: if wrong remote url set while pushing code
