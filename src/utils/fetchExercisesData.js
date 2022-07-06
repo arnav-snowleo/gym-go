@@ -7,7 +7,7 @@ export const exerciseOptions = {
 };
   
 
-export const fetchExercisesData = async(url, options) => {
+export const fetchData = async(url, options) => {
     const response = await fetch(url, options);
 
     //we are using fetch instead of axios , so we need to extract the data from "response"
