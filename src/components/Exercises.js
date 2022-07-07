@@ -8,7 +8,19 @@ import { exerciseOptions, fetchData} from '../utils/fetchExercisesData';
 
 const Exercises = ({exercises, setExercises, bodyPart}) => {
   
-  console.log(exercises);
+  const [currentPage, setCurrentPage] = useState(1);
+  const exercisesPerPage = 9;
+  const indexOfLastExercise = currentPage * exercisesPerPage;
+  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+  const currentExercisesBatch = exercises.slice(indexOfFirstExercise,indexOfLastExercise);
+
+  const paginate = (e,value) => {
+    setCurrentPage(value);
+
+    window.scrollTo({top:1800, behavior: 'smooth'})
+  }
+
+  // console.log(exercises);
 
   return (
     <Box id='exercises'
@@ -29,10 +41,31 @@ const Exercises = ({exercises, setExercises, bodyPart}) => {
           flexWrap='wrap'
           justifyContent='center'
       >
-        {exercises.map( (exercise, index) => (
+        {currentExercisesBatch.map( (exercise, index) => (
           <ExerciseCard key={index} exercise={exercise}/>
           // <p>{exercise.name}</p>
         ))}
+
+      </Stack>
+
+      {/* pagination */}
+
+      <Stack mt='100px' alignItems='center' >
+
+        {exercises.length > 9 && (
+          <Pagination
+            color='standard'
+            shape='rounded'
+            defaultPage = {1}
+            count = {Math.ceil(exercises.length/exercisesPerPage)}
+            page = {currentPage}
+            // onChange = {(e) => paginate(e,value)} //this is done by materialUi
+            onChange =  {paginate}
+            size = 'large'
+          />
+
+        )}
+
 
       </Stack>
     </Box>
