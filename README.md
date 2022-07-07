@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+## File directory structure 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-- src 
+   |-- assets
+       |-- icons
+       |-- images
+   |-- components
+   |-- pages
+   |-- utils
+   
+   --App.css
+   --App.js
+   --index.js
 
 ## Available Scripts
 
@@ -71,5 +81,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### notes
 
-- for installing dependencies in package.json, npm install --legacy-peer-deps
-- git remote rm origin : removes set remote urls :: if wrong remote url set while pushing code
+- for installing dependencies in package.json, ```npm install --legacy-peer-deps```
+- ```git remote rm origin``` : removes set remote urls :: if wrong remote url set while pushing code

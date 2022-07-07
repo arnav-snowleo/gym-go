@@ -41,7 +41,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
         || exercise.bodyPart.toLowerCase().includes(search)
       );
 
-      setSearch = '';
+      //setSearch = '';  //commented as 'setSearch' is constant  no-const-assign
       setExercises(searchedExercises);
     }
   }
