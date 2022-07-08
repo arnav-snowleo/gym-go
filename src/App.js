@@ -5,8 +5,8 @@ import { Box } from '@mui/material';                      //div with shading, an
 
 import './App.css';
 
-import ExerciseDetail from './pages/ExerciseDetail';
-import Home from './pages/Home';
+import ExerciseDetailPage from './pages/ExerciseDetailPage';
+import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -15,8 +15,8 @@ const App = () => {
     <Box width ="400px" sx={{ width: {xl: '1448px'} }} m="auto">
         <Navbar/>
         <Routes >
-            <Route path ="/" element = { <Home/> } />
-            <Route path ="/exercise/:id" element = { <ExerciseDetail/>}  />
+            <Route path ="/" element = { <HomePage/> } />
+            <Route path ="/exercise/:id" element = { <ExerciseDetailPage/>}  />
         </Routes>
         <Footer/> 
     </Box>
