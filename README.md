@@ -1,16 +1,18 @@
 ## File directory structure 
 
--- src 
-   |-- assets
-       |-- icons
-       |-- images
-   |-- components
-   |-- pages
-   |-- utils
-   
-   --App.css
-   --App.js
-   --index.js
+src
+├── assets
+|   ├── icons
+│   └── images
+├── components
+│   └── 
+├── pages
+|   └──
+├── utils
+|   └──
+├── App.css
+├── App.js
+└── index.js
 
 ## Available Scripts
 
