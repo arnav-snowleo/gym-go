@@ -5,7 +5,7 @@ import HeroBanner from '../components/HeroBanner';
 import SearchExercises from '../components/SearchExercises';
 import Exercises from '../components/Exercises';
 
-const Home = () => {
+const HomePage = () => {
   const [bodyPart, setBodyPart] = useState('all');
   const [exercises, setExercises] = useState([]);
   return (
@@ -27,4 +27,4 @@ const Home = () => {
 
 //can use react context to remove redundant code
 
-export default Home
+export default HomePage

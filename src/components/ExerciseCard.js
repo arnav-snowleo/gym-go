@@ -4,8 +4,10 @@ import {Link} from 'react-router-dom';
 
 
 const ExerciseCard = ({exercise}) => {
+
   return (
-    <Link className="exercise-card" to={'/exercise/${exercise.id}'}>
+    // ALERT: spent 2 hrs to debug:  used this '' instead of `` 
+    <Link className="exercise-card" to={`/exercise/${exercise.id}`}>  
         <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
         <Stack direction="row">
             <Button sx={{
@@ -27,7 +29,7 @@ const ExerciseCard = ({exercise}) => {
                 borderRadius: '20px',
                 textTransform: 'capitalize'
             }}>
-                {exercise.targetMuscle}
+                {exercise.target} 
 
             </Button>
 
