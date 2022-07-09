@@ -2,7 +2,7 @@ import React , {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';  //for getting id of the current exercise we need to display
 
 import {Box} from '@mui/material';
-import {exerciseOptions, fetchData} from '../utils/fetchExercisesData';
+import {exerciseOptions, youtubeOptions, fetchData} from '../utils/fetchExercisesData';
 
 import Detail from '../components/exerciseDetailComponents/Detail';
 import ExerciseVideos from '../components/exerciseDetailComponents/ExerciseVideos';
@@ -13,6 +13,8 @@ const ExerciseDetailPage = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
   const { id } = useParams();
 
+  const [exerciseVideo, setExerciseVideo] = useState([]);
+
   useEffect(() => {
     const fetchDetailData = async() => {
 
@@ -20,8 +22,13 @@ const ExerciseDetailPage = () => {
       const videoUrl = 'https://youtube-search-and-download.p.rapidapi.com';
 
       const exerciseDetailData = await fetchData(`${exerciseDBUrl}/exercises/exercise/${id}` , exerciseOptions);
-    
       setExerciseDetail(exerciseDetailData);
+
+      const exerciseVideoData = await fetchData(`${videoUrl}/search?query=${exerciseDetailData.name}` , youtubeOptions);
+      setExerciseVideo(exerciseVideoData.contents);
+
+      // const exerciseDetailData = await fetchData(`${exerciseDBUrl}/exercises/exercise/${id}` , exerciseOptions);
+      // setExerciseDetail(exerciseDetailData);
     };
 
     fetchDetailData();
@@ -32,7 +39,7 @@ const ExerciseDetailPage = () => {
   return (
     <Box sx={{mt : {lg: '96px' , xs: '60px'} }}>
       <Detail exerciseDetail={exerciseDetail}/>
-      <ExerciseVideos />
+      <ExerciseVideos exerciseVideo={exerciseVideo} name={exerciseDetail.name}/>
       <SimilarExercises />
     </Box>
   )
