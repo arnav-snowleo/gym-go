@@ -1,6 +1,6 @@
-## File directory structure 
+<!-- ## File directory structure  -->
 
-src
+<!-- src
 ├── assets
 |   ├── icons
 │   └── images
@@ -12,7 +12,7 @@ src
 |   └──
 ├── App.css
 ├── App.js
-└── index.js
+└── index.js -->
 
 ## Available Scripts
 
@@ -67,3 +67,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - for installing dependencies in package.json, ```npm install --legacy-peer-deps```
 - ```git remote rm origin``` : removes set remote urls :: if wrong remote url set while pushing code
+- make sure to use `` and not '' for passing urls . < SPENT QUITE SOME AMOUNT DEBUGGING THIS >
+- finally for deploying, run ```npm run build``` 
